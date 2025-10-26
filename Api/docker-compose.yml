@@ -15,31 +15,13 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DB_HOST=host.docker.internal
+      - DB_HOST=host.docker.internal  # apunta a tu PostgreSQL local
       - DB_USER=postgres
       - DB_PASS=dayana
       - DB_NAME=PokemonApi
       - DB_PORT=5432
-    depends_on:
-      - db
     networks:
       - app-network
-
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: dayana
-      POSTGRES_DB: PokemonApi
-    ports:
-      - "5432:5432"
-    networks:
-      - app-network
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
 
 networks:
   app-network:
-
-volumes:
-  postgres_data:
