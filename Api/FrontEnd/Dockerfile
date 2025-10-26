@@ -1,10 +1,12 @@
-# Imagen base: Nginx
-FROM nginx:stable-alpine
+# frontend/Dockerfile
+FROM node:18-alpine
 
-# Copiar archivos del frontend a la carpeta pública de Nginx
-COPY . /usr/share/nginx/html
+WORKDIR /app
 
-# Exponer puerto 80
-EXPOSE 80
+COPY . .
 
-CMD ["nginx", "-g", "daemon off;"]
+RUN npm install -g serve
+
+EXPOSE 8080
+
+CMD ["serve", "-s", ".", "-l", "8080"]
