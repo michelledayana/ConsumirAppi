@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PokeAPI</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkeley Pokémon</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Pokedex</h2>
-    <input type="text" id="searchInput" placeholder="Buscar Pokémon...">
-    <button id="searchBtn">Buscar</button>
-    <div id="pokemonContainer"></div>
-  </div>
+    <div class="pokemon-container">
+        <header class="pokemon-header">
+            <h1>Pokemones</h1>
+        </header>
+        
+        <main>
+            <div id="pokemonContainer" class="pokemon-list">
+                <!-- Los Pokémon se cargarán aquí -->
+            </div>
+            
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Buscar Pokémon...">
+                <button id="searchBtn">fas fa-search</button>
+            </div>
+        </main>
+    </div>
 
-  <script src="js/pokemon.js"></script>
+    <script src="js/pokemon.js"></script>
 </body>
 </html>

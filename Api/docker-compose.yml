@@ -1,27 +1,27 @@
 version: '3.9'
 
 services:
-  frontend:
-    build: ./frontend
-    ports:
-      - "8080:80"
-    depends_on:
-      - backend
-    networks:
-      - app-network
-
   backend:
-    build: ./backend
+    build: ./BackEnd
     ports:
       - "3000:3000"
     environment:
-      - DB_HOST=host.docker.internal  # apunta a tu PostgreSQL local
-      - DB_USER=postgres
-      - DB_PASS=dayana
-      - DB_NAME=PokemonApi
-      - DB_PORT=5432
+      DB_HOST: host.docker.internal
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASS: dayana
+      DB_NAME: PokemonApi
     networks:
       - app-network
+
+  frontend:
+    build: ./FrontEnd
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
 
 networks:
   app-network:

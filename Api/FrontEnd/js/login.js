@@ -1,3 +1,5 @@
+const BACKEND_URL = 'http://host.docker.internal:3000';
+
 document.getElementById('loginBtn').addEventListener('click', async () => {
   const username = document.getElementById('username').value.trim();
   const password = document.getElementById('password').value.trim();
@@ -10,7 +12,7 @@ document.getElementById('loginBtn').addEventListener('click', async () => {
   }
 
   try {
-    const res = await fetch('http://backend:3000/api/login', {
+    const res = await fetch(`${BACKEND_URL}/api/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
@@ -29,6 +31,7 @@ document.getElementById('loginBtn').addEventListener('click', async () => {
       msg.style.color = "red";
     }
   } catch (error) {
+    console.error(error);
     msg.textContent = "Error de conexión con el servidor";
     msg.style.color = "red";
   }

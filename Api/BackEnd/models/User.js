@@ -1,11 +1,12 @@
 import { pool } from '../db/connection.js';
-import bcrypt from 'bcryptjs';
 
+// Buscar usuario por username
 export const findUserByUsername = async (username) => {
   const result = await pool.query('SELECT * FROM users WHERE username = $1', [username]);
-  return result.rows[0];
+  return result.rows[0]; // retorna el primer usuario encontrado
 };
 
-export const validatePassword = async (password, hash) => {
-  return await bcrypt.compare(password, hash);
+// Validar contraseña en texto plano
+export const validatePassword = async (password, dbPassword) => {
+  return password === dbPassword; // comparación directa
 };

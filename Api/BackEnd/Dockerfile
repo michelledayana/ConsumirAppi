@@ -1,18 +1,17 @@
-# Imagen base
 FROM node:18
 
-# Directorio de trabajo
+# Crear el directorio de trabajo
 WORKDIR /app
 
-# Copiar y preparar dependencias
+# Copiar archivos de dependencias e instalar
 COPY package*.json ./
 RUN npm install
 
-# Copiar código
+# Copiar el resto del proyecto
 COPY . .
 
-# Exponer puerto
+# Exponer el puerto 3000
 EXPOSE 3000
 
-# Comando de inicio
+# Iniciar el servidor
 CMD ["npm", "start"]
