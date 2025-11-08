@@ -1,66 +1,28 @@
-# =========================
-# 📦 NODE.JS / BACKEND
-# =========================
+# Node.js
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
 
-# Archivos de entorno
+# Environment files
 .env
-.env.local
-.env.*.local
 
 # Logs
 logs/
 *.log
 
-# Archivos temporales
-tmp/
-temp/
-*.tmp
-*.bak
-
-# =========================
-# 💻 FRONTEND
-# =========================
-dist/
-build/
-.cache/
-*.tsbuildinfo
-
-# =========================
-# 🐳 DOCKER
-# =========================
-**/.dockerignore
-**/Dockerfile
-!docker-compose.yml
-
-# =========================
-# ⚙️ SISTEMA OPERATIVO
-# =========================
+# Sistema operativo
 .DS_Store
 Thumbs.db
 
-# =========================
-# 🧩 EDITORES / IDE
-# =========================
+# Docker
+*.env.local
+**/*.dockerignore
+
+# IDE / Editor
 .vscode/
 .idea/
-*.sublime-project
-*.sublime-workspace
 
-# =========================
-# 🧪 TESTS
-# =========================
-coverage/
-.nyc_output/
-jest-html-reporters-*
-
-# =========================
-# 📂 MISCELÁNEO
-# =========================
-seed.js
-*.local.js
-*.test.js
+# Builds frontend
+dist/
+build/
