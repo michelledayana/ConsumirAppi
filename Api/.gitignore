@@ -33,11 +33,8 @@ build/
 # =========================
 # 🐳 DOCKER
 # =========================
-# Ignorar archivos de configuración locales
 **/.dockerignore
 **/Dockerfile
-
-# Mantén docker-compose.yml si lo usas
 !docker-compose.yml
 
 # =========================
@@ -64,7 +61,6 @@ jest-html-reporters-*
 # =========================
 # 📂 MISCELÁNEO
 # =========================
-# Archivos locales o scripts temporales
 seed.js
 *.local.js
 *.test.js
