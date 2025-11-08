@@ -72,7 +72,7 @@ async function saveSearch(query) {
   if (!user) return;
 
   try {
-    await fetch('http://backend:3000/api/searches', {
+    await fetch('https://apipokemon-ug9f.onrender.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

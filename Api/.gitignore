@@ -1,35 +1,70 @@
-# Node.js
+# =========================
+# 📦 NODE.JS / BACKEND
+# =========================
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
 
-# Environment files
+# Archivos de entorno
 .env
+.env.local
+.env.*.local
 
 # Logs
 logs/
 *.log
 
-# Sistema operativo
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+*.bak
+
+# =========================
+# 💻 FRONTEND
+# =========================
+dist/
+build/
+.cache/
+*.tsbuildinfo
+
+# =========================
+# 🐳 DOCKER
+# =========================
+# Ignorar archivos de configuración locales
+**/.dockerignore
+**/Dockerfile
+
+# Mantén docker-compose.yml si lo usas
+!docker-compose.yml
+
+# =========================
+# ⚙️ SISTEMA OPERATIVO
+# =========================
 .DS_Store
 Thumbs.db
 
-# Docker (ignorar imágenes y archivos temporales, pero no docker-compose.yml)
-*.env.local
-**/*.dockerignore
-# Ignorar Dockerfiles solo si quieres (opcional)
-# **/Dockerfile
-
-# Editor / IDE
+# =========================
+# 🧩 EDITORES / IDE
+# =========================
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# Frontend build (si haces build)
-dist/
-build/
+# =========================
+# 🧪 TESTS
+# =========================
+coverage/
+.nyc_output/
+jest-html-reporters-*
 
-# Archivos generados o temporales de Node.js
-*.tsbuildinfo
+# =========================
+# 📂 MISCELÁNEO
+# =========================
+# Archivos locales o scripts temporales
+seed.js
+*.local.js
+*.test.js
