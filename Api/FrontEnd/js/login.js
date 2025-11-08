@@ -1,31 +1,33 @@
-const BACKEND_URL = 'http://host.docker.internal:3000';
+const BACKEND_URL = 'http://localhost:3000';
 
 document.getElementById('loginBtn').addEventListener('click', async () => {
-  const username = document.getElementById('username').value.trim();
+  const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
   const msg = document.getElementById('msg');
 
-  if (!username || !password) {
+  if (!email || !password) {
     msg.textContent = "Completa todos los campos";
     msg.style.color = "red";
     return;
   }
 
   try {
-    const res = await fetch(`${BACKEND_URL}/api/login`, {
+    const res = await fetch(`${BACKEND_URL}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ email, password })
     });
 
     const data = await res.json();
 
     if (res.ok) {
-      localStorage.setItem('user', JSON.stringify({
-        username,
-        role: data.role
-      }));
-      window.location.href = "api.html";
+      localStorage.setItem('user', JSON.stringify(data.user));
+      msg.textContent = "✅ Inicio de sesión exitoso";
+      msg.style.color = "green";
+
+      setTimeout(() => {
+        window.location.href = "api.html";
+      }, 1000);
     } else {
       msg.textContent = data.message || "Credenciales incorrectas";
       msg.style.color = "red";
